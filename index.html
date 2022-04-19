@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bai4_JS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- One page roll -->
+    <link
+      rel="stylesheet"
+      href="./purejs-onepage-scroll-master/onepage-scroll.css"
+    />
+
+    <!-- Style -->
+    <style>
+      .center {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+      .bai1 {
+        background: linear-gradient(-45deg, #c06c84, #6c5b7b, #355c7d);
+      }
+
+      .bai2 {
+        background: linear-gradient(-45deg, #7aa1d2, #dbd4b4, #cc95c0);
+      }
+
+      .bai1,
+      .bai2 {
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        height: 100vh;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section class="bai1">
+        <div class="container">
+          <div class="center">
+            <h3>Bài 1 - Quản lý tuyển sinh</h3>
+            <h4>Nhập điểm sinh viên</h4>
+            <div class="input-number d-flex w-75 my-3 border-top pt-3">
+              <div class="form-group mx-3">
+                <label for="bai1_diem_mon_1">Nhập điểm môn 1</label>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  name=""
+                  id="bai1_diem_mon_1"
+                  aria-describedby="helpId"
+                />
+              </div>
+              <div class="form-group mx-3">
+                <label for="bai1_diem_mon_2">Nhập điểm môn 2</label>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  name=""
+                  id="bai1_diem_mon_2"
+                  aria-describedby="helpId"
+                />
+              </div>
+              <div class="form-group mx-3">
+                <label for="bai1_diem_mon_3">Nhập điểm môn 3</label>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  name=""
+                  id="bai1_diem_mon_3"
+                  aria-describedby="helpId"
+                />
+              </div>
+              <div class="form-group mx-3">
+                <label for="bai1_diem_chuan">Nhập điểm chuẩn</label>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  name=""
+                  id="bai1_diem_chuan"
+                  aria-describedby="helpId"
+                />
+              </div>
+            </div>
+            <h4>Lựa chọn Khu vực và Đối tượng</h4>
+            <form action="" class="d-flex pb-3">
+              <div class="form-group mx-3">
+                <label for="khu_vuc">Lựa chọn Khu vực</label>
+                <select
+                  class="form-control text-center"
+                  name="khu_vuc"
+                  id="khu_vuc"
+                >
+                  <option value="A">Khu vực A</option>
+                  <option value="B">Khu vực B</option>
+                  <option value="C">Khu vực C</option>
+                  <option value="X">Không ưu tiên</option>
+                </select>
+              </div>
+              <div class="form-group mx-3">
+                <label for="doi_tuong">Lựa chọn Đối tượng</label>
+                <select
+                  class="form-control text-center"
+                  name="doi_tuong"
+                  id="doi_tuong"
+                >
+                  <option value="1">Ưu tiên 1</option>
+                  <option value="2">Ưu tiên 2</option>
+                  <option value="3">Ưu tiên 3</option>
+                  <option value="0">Không ưu tiên</option>
+                </select>
+              </div>
+            </form>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="xacDinhKetQua()"
+            >
+              Xác định kết quả
+            </button>
+            <br />
+            <div id="bang_diem"></div>
+            <p id="bai1_ket_qua" class="display-4"></p>
+            <p id="diem_liet" class="display-4"></p>
+          </div>
+        </div>
+      </section>
+      <section class="bai2">
+        <div class="container center">
+          <h3>Bài 2 - Tính tiền điện</h3>
+          <h4>Nhập tên người sử dụng và số kW sử dụng</h4>
+          <div
+            class="input-number d-flex justify-content-around w-50 my-3 border-top pt-3"
+          >
+            <div class="form-group mx-3">
+              <label for="bai2_user">Nhập Tên người sử dụng</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai2_user"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group mx-3">
+              <label for="bai2_soKW">Nhập số kW tiêu thụ</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai2_soKW"
+                aria-describedby="helpId"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="tinhTienDien()"
+          >
+            Tính tiền điện
+          </button>
+          <br />
+          <p id="bai2_ket_qua" class="display-4"></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="./bai1.js"></script>
+    <script src="./bai2.js"></script>
+
+    <!-- One Page Scroll -->
+    <script src="./purejs-onepage-scroll-master/onepagescroll.js"></script>
+    <script>
+      onePageScroll(".main");
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
